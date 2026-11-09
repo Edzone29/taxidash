@@ -1,0 +1,127 @@
+﻿/* ============================================
+   TaxiDash Global Enhancements
+   ============================================ */
+
+/* --- Smooth page fade-in --- */
+body {
+  animation: fadeInPage 0.4s ease both;
+}
+@keyframes fadeInPage { from { opacity:0; } to { opacity:1; } }
+
+/* --- Nav progress bar --- */
+.nav-loading-bar {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, #3bafda, #1e3c72);
+  z-index: 99999; transition: width 0.3s ease;
+}
+.nav-loading-bar.loading { width: 70%; }
+.nav-loading-bar.done { width: 100%; opacity: 0; transition: width 0.2s ease, opacity 0.3s ease 0.1s; }
+
+/* --- Card Hover Effects --- */
+.card { transition: transform 0.25s ease, box-shadow 0.25s ease !important; }
+.card[role="button"]:hover, .card.hoverable:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18) !important;
+}
+
+/* --- Buttons --- */
+.btn { transition: all 0.2s ease !important; border-radius: 8px !important; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.btn:active { transform: translateY(0); }
+
+/* --- Form Controls --- */
+.form-control, .form-select {
+  border-radius: 8px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 0 3px rgba(59,175,218,0.2) !important;
+  border-color: #3bafda !important;
+}
+
+/* --- Sidebar --- */
+.vertical-menu { transition: width 0.3s ease !important; }
+#side-menu li a {
+  transition: background-color 0.2s ease, padding-left 0.2s ease !important;
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+}
+#side-menu li a:hover {
+  background-color: rgba(59,175,218,0.12) !important;
+  padding-left: 22px !important;
+}
+#side-menu li a.active, #side-menu li.mm-active > a {
+  background: linear-gradient(135deg, rgba(59,175,218,0.2), rgba(30,60,114,0.15)) !important;
+  border-left: 3px solid #3bafda !important;
+}
+
+/* --- Topbar --- */
+#page-topbar { box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important; }
+
+/* --- Tables --- */
+.table thead th {
+  background: linear-gradient(135deg, #3bafda, #1e3c72);
+  color: white !important; border: none !important;
+  font-weight: 600; letter-spacing: 0.4px;
+}
+.table tbody tr { transition: background-color 0.15s ease; }
+.table tbody tr:hover { background-color: rgba(59,175,218,0.06) !important; }
+
+/* --- Badges --- */
+.badge { border-radius: 6px !important; font-weight: 500 !important; padding: 5px 10px !important; }
+
+/* --- Alerts --- */
+.alert { border-radius: 10px !important; border: none !important; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #3bafda; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #1e3c72; }
+
+/* --- Breadcrumb --- */
+.breadcrumb { background: transparent !important; padding: 0 !important; }
+.breadcrumb-item a { color: #3bafda !important; text-decoration: none; }
+
+/* --- Footer --- */
+.footer { padding: 16px 24px !important; font-size: 0.85rem; color: #6c757d; }
+
+/* --- Active menu --- */
+.metismenu .active > a { color: #3bafda !important; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+  .page-content { padding: 20px 14px !important; }
+}
+
+@media (max-width: 768px) {
+  .page-content { padding: 16px 10px !important; }
+  .container-fluid { padding-left: 10px !important; padding-right: 10px !important; }
+  .card-body { padding: 16px !important; }
+  .col-xl-3.col-sm-6 { margin-bottom: 12px; }
+  #map { height: 260px !important; }
+  .navbar-brand-box { width: 70px !important; }
+  h3.card-title { font-size: 1rem !important; }
+  .table th, .table td { font-size: 0.82rem; padding: 8px 6px !important; }
+}
+
+@media (max-width: 576px) {
+  .page-title-box { flex-direction: column; align-items: flex-start !important; gap: 6px; }
+  .btn { font-size: 0.85rem !important; }
+  h3 { font-size: 1.15rem !important; }
+  h4 { font-size: 1rem !important; }
+  .modal-dialog { margin: 10px !important; }
+  .card { border-radius: 12px !important; }
+  .d-grid .btn { width: 100%; }
+}
+
+/* --- Stat card number animation --- */
+@keyframes countUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.card h4.font-weight-bold { animation: countUp 0.6s ease both; }
+
+/* --- Page title box --- */
+.page-title-box h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3c72;
+}
